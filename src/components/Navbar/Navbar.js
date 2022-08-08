@@ -1,21 +1,42 @@
 import {NavLink} from "react-router-dom";
+import "./assets/Navbar.css";
+import logo from "../../assets/shared/desktop/logo.svg";
+import cart from "./assets/icon-cart.svg";
 
 const Navbar = () => {
   return (
     <nav>
-        <div>
-            <img src="#" alt="logo" />
+        <img src={logo} alt="logo" />
+
+        <div className="nav--links">
+            <NavLink 
+              to="/"
+              className={({isActive}) => isActive ?  'link active' : 'link'}
+            >
+              Home
+            </NavLink>
+            <NavLink 
+              to="/headphones"
+              className={({isActive}) => isActive ? 'link active' : 'link'}
+            >
+              Headphones
+            </NavLink>
+            <NavLink 
+              to="/speakers"
+              className={({isActive}) => isActive ? 'link active' : 'link'}
+            >
+              Speakers
+            </NavLink>
+            <NavLink 
+              to="/earphones"
+              className={({isActive}) => isActive ? 'link active' : 'link'}
+            >
+              Earphones
+            </NavLink>
         </div>
 
-        <div>
-            <NavLink to="#">Home</NavLink>
-            <NavLink to="#">Headphones</NavLink>
-            <NavLink to="#">Speakers</NavLink>
-            <NavLink to="#">Earphones</NavLink>
-        </div>
-
-        <div>
-            Cart
+        <div className="cart">
+            <img src={cart} alt="cart" />
         </div>
     </nav>
   )

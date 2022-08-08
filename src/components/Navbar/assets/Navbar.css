@@ -1,0 +1,32 @@
+nav {
+    background-color: var(--black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 35px 165px;
+}
+
+.nav--links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 34px;
+}
+
+.nav--links a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav--links a:hover {
+    color: var(--orange);
+}
+
+.nav--links a.link.active {
+    color: var(--orange);
+}
