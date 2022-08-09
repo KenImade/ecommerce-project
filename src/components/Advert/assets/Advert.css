@@ -1,0 +1,28 @@
+.advert {
+    display: inline-flex;
+    margin: 0 auto;
+    padding: 200px 165px;
+    gap: 125px;
+    text-align: left;
+}
+
+.advert div,
+.advert img {
+    display: inline-block;
+}
+
+.advert div {
+    width: 445px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.advert .styledH2 {
+    color: var(--orange);
+    font-weight: inherit;
+    text-transform: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}

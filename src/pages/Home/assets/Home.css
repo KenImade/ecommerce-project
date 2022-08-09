@@ -1,0 +1,28 @@
+.home .hero {
+    height: 730px;
+    background-image: url(./desktop/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 128px;
+    padding-left: 165px;
+    padding-right: 165px;
+}
+
+.home .hero .overline {
+    color: var(--white);
+    opacity: 0.5;
+}
+
+.home .hero h1 {
+    width: 396px;
+    color: var(--white);
+    margin-top: 24px;
+}
+
+.home .hero .body {
+    width: 349px;
+    color: var(--white);
+    opacity: 0.75;
+    margin-top: 24px;
+    margin-bottom: 40px;
+}
