@@ -84,7 +84,9 @@ h6 {
 /* BUTTONS */
 
 .btn, .btn:visited {
+	display: inline-block;
 	text-decoration: none;
+	text-align: center;
 	padding: 15px 30px;
 	width: 160px;
 	height: 48px;
