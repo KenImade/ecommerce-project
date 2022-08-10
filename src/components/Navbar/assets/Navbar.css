@@ -1,25 +1,39 @@
 .navbar {
-    background-color: var(--black);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding-top: 35px;
+    padding-bottom: 0px;
+    background-color: var(--black);
+}
+
+.navbar .container {
+    display: flex;
+    background-color: var(--black);
     flex-direction: row;
     align-items: center;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-left: 165px;
+    padding-right: 165px;
 }
 
-.navbar .logo {
-    margin-left: 165px;
+.navbar .line {
+    margin: 0 auto;
+    border-bottom: 1px solid var(--grey);
+    width: 1110px;
 }
 
-.nav--links {
+.navbar .container .nav--links {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 197px;
+    margin-right: 200px;
     gap: 34px;
 }
 
-.nav--links a {
+.navbar .container .nav--links a {
     text-decoration: none;
     color: var(--white);
     font-weight: 700;
@@ -28,15 +42,18 @@
     letter-spacing: 2px;
 }
 
-.nav--links a:hover {
+.navbar .container .nav--links a:hover,
+.navbar .container .nav--links a.link.active {
     color: var(--orange);
 }
 
-.nav--links a.link.active {
-    color: var(--orange);
+.navbar .container .cart {
+    height: 15px;
+    width: 24px;
 }
 
-.navbar .cart {
-    margin-right: 165px;
-    margin-left: 317px;
+.navbar .container .cart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
