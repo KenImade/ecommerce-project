@@ -1,0 +1,11 @@
+.category-banner {
+    height: 239px;
+    background-color: var(--black);
+    text-align: center;
+    color: var(--white);
+    padding: 98px 10px;
+}
+
+.category-banner h2 {
+    text-align: center;
+}
