@@ -5,8 +5,8 @@ import cart from "./assets/icon-cart.svg";
 
 const Navbar = () => {
   return (
-    <nav>
-        <img src={logo} alt="logo" />
+    <nav className="navbar">
+        <img src={logo} alt="logo" className="logo"/>
 
         <div className="nav--links">
             <NavLink 

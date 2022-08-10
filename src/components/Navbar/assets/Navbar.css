@@ -1,16 +1,21 @@
-nav {
+.navbar {
     background-color: var(--black);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    padding: 35px 165px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.navbar .logo {
+    margin-left: 165px;
 }
 
 .nav--links {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 197px;
     gap: 34px;
 }
 
@@ -29,4 +34,9 @@ nav {
 
 .nav--links a.link.active {
     color: var(--orange);
+}
+
+.navbar .cart {
+    margin-right: 165px;
+    margin-left: 317px;
 }

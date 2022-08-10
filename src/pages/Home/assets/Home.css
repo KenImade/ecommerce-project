@@ -4,8 +4,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 128px;
-    padding-left: 165px;
     padding-right: 165px;
+}
+
+.home .hero div {
+    margin-left: 165px;
 }
 
 .home .hero .overline {
