@@ -10,12 +10,9 @@
 }
 
 .navbar .container {
-    display: flex;
-    background-color: var(--black);
-    flex-direction: row;
-    align-items: center;
-    padding-left: 165px;
-    padding-right: 165px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-content: space-between;
 }
 
 .navbar .line {
@@ -28,8 +25,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin-left: 197px;
-    margin-right: 200px;
+    margin-right: 320px;
     gap: 34px;
 }
 
