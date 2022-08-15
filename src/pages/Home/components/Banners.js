@@ -18,14 +18,14 @@ const Banners = () => {
               Upgrade to premium speakers that are phenomenally built 
               to deliver truly remarkable sound.
             </p>
-            <Button link={"#"} className={"btn-one"} name={"see product"}/>
+            <Button link={"/zx9-speaker"} className={"btn-one"} name={"see product"}/>
           </div>
         </div>
 
         <div className="banner-two" style={{backgroundImage: `url(${speakerTwo})`}}>
             <div className="content">
                 <h4>zx7 speaker</h4>
-                <Button link={"#"} className={"btn-two"} name={"see product"} />
+                <Button link={"/zx7-speaker"} className={"btn-two"} name={"see product"} />
             </div>
         </div>
 
@@ -36,7 +36,7 @@ const Banners = () => {
 
             <div className="right">
                 <h4>yx1 earphones</h4>
-                <Button link={"#"} className={"btn-two"} name={"see product"} />
+                <Button link={"/yx1-wireless-earphones"} className={"btn-two"} name={"see product"} />
             </div>
         </div>
       </div>

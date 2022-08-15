@@ -1,0 +1,116 @@
+.product-hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 125px;
+    margin-top: 56px;
+    padding-left: 165px;
+    padding-right: 165px;
+}
+
+.product-hero .product-hero-img {
+    height: 560px;
+    width: 540px;
+}
+
+.product-hero .product-hero-img img {
+    height: 100%;
+    width: 100%;
+}
+
+.product-hero .product-hero-info {
+    width: 445px;
+}
+
+.product-hero .product-hero-info .overline {
+    margin-bottom: 16px;
+}
+
+.product-hero .product-hero-info .product-text {
+    margin-top: 32px;
+}
+
+.product-hero .product-hero-info .product-price {
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 47px;
+    font-size: 18px;
+}
+
+.product-hero .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.product-hero .actions .btn-one {
+    padding: 15px 30px;
+    height: 48px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.product-desc {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-around;
+    gap: 125px;
+    margin-top: 168px;
+    padding-left: 165px;
+    padding-right: 165px;
+}
+
+.product-desc .features {
+    width: 635px;
+}
+
+.product-desc .features p,
+.product-desc .in-the-box ul {
+    margin-top: 32px;
+}
+
+.product-desc .in-the-box ul li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.product-desc .in-the-box ul li .qty {
+    margin-right: 24px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 165px;
+    gap: 30px;
+    height: 592px;
+    margin-top: 152px;
+}
+
+.gallery img {
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery .first-box {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.gallery .lg-img {
+    height: 592px;
+}
+
+.gallery .sm-img {
+    height: calc((592px - 32px)/2);
+}

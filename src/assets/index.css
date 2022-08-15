@@ -214,13 +214,22 @@ form {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: center;
 	background-color: var(--grey);
 	color: var(--black);
 	font-weight: 700;
 }
 
+.numbers div {
+	width: 40px;
+	text-align: center;
+}
+
 .numbers button {
 	background-color: var(--grey);
+	width: 40px;
+	text-align: center;
+	cursor: pointer;
 }
 
 .numbers button:hover {
