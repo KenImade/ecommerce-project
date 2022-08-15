@@ -12,7 +12,6 @@ const initialState = {
 
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
     const response = await axios.get(PRODUCTS_URL)
-    // console.log(response)
     return response.data
 });
 
