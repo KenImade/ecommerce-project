@@ -3,6 +3,7 @@
         {
             "id": 1,
             "title": "xx99-mark-ii-headphones",
+            "tag": "xx99-mark-ii",
             "category": "headphones",
             "isNew": true,
             "preview": {
@@ -62,6 +63,7 @@
         {
             "id": 2,
             "title": "xx99-mark-i-headphones",
+            "tag": "xx99-mark-i",
             "category": "headphones",
             "isNew": false,
             "preview": {
@@ -117,6 +119,7 @@
         {
             "id": 3,
             "title": "xx59-headphones",
+            "tag": "xx59",
             "category": "headphones",
             "isNew": false,
             "preview": {
@@ -172,6 +175,7 @@
         {
             "id": 4,
             "title": "zx9-speaker",
+            "tag": "zx9-speaker",
             "category": "speakers",
             "isNew": true,
             "preview": {
@@ -231,6 +235,7 @@
         {
             "id": 5,
             "title": "zx7-speaker",
+            "tag": "zx7-speaker",
             "category": "speakers",
             "isNew": false,
             "preview": {
@@ -290,6 +295,7 @@
         {
             "id": 6,
             "title": "yx1-wireless-earphones",
+            "tag": "yx1",
             "category": "earphones",
             "isNew": true,
             "preview": {

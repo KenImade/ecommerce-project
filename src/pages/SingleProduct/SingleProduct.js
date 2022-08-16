@@ -4,13 +4,14 @@ import { useEffect } from 'react';
 
 import Advert from "../../components/Advert/Advert";
 import CategoryCardSection from "../../components/CategoryCard/CategoryCardSection";
-import "./assets/SingleProduct.css";
-
-import { getProductsError, getProductsStatus, selectAllProducts, fetchProducts } from '../../features/products/productsSlice';
 import ProductHero from "./components/ProductHero";
 import ProductDescription from "./components/ProductDescription";
 import Gallery from "./components/Gallery";
 import Recommender from "./components/Recommender";
+
+import { getProductsError, getProductsStatus, selectAllProducts, fetchProducts } from '../../features/products/productsSlice';
+
+import "./assets/SingleProduct.css";
 
 const SingleProduct = () => {
     const title = useParams();

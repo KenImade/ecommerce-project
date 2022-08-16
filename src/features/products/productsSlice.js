@@ -15,6 +15,8 @@ export const fetchProducts = createAsyncThunk("products/fetch", async () => {
     return response.data
 });
 
+
+
 const productsSlice = createSlice({
     name: 'products',
     initialState,
@@ -38,6 +40,5 @@ const productsSlice = createSlice({
 export const selectAllProducts = (state) => state.products.products;
 export const getProductsStatus = (state) => state.products.status;
 export const getProductsError = (state) => state.products.error;
-
 
 export default productsSlice.reducer;
