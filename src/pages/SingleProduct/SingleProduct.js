@@ -8,6 +8,7 @@ import ProductHero from "./components/ProductHero";
 import ProductDescription from "./components/ProductDescription";
 import Gallery from "./components/Gallery";
 import Recommender from "./components/Recommender";
+import Spinner from "../../components/Spinner/Spinner";
 
 import { getProductsError, getProductsStatus, selectAllProducts, fetchProducts } from '../../features/products/productsSlice';
 
@@ -29,8 +30,7 @@ const SingleProduct = () => {
     }, [productsStatus, dispatch])
 
     if (productsStatus === 'loading') {
-        // TODO: Create spinner
-      return  <p>"Loading..."</p>;
+      return <Spinner />
     } else if (productsStatus === 'failed') {
         // TODO: Create custom error page
         return <p>{error}</p>
