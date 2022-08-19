@@ -1,3 +1,6 @@
+import {useOutletContext} from "react-router-dom";
+import { useEffect } from "react";
+
 import Advert from "../../components/Advert/Advert";
 import CategoryBanner from "../../components/CategoryBanner/CategoryBanner";
 import CategoryCardSection from "../../components/CategoryCard/CategoryCardSection";
@@ -8,6 +11,12 @@ import zx9Img from "./assets/product-zx9-speaker/desktop/image-category-page-pre
 import ProductCard from "../../components/ProductCard/ProductCard";
 
 const Speakers = () => {
+  const setDisplayCart = useOutletContext()[1]
+
+  useEffect(() => {
+    setDisplayCart(false)
+  }, [setDisplayCart])
+  
   return (
     <section>
         <CategoryBanner title={"speakers"}/>

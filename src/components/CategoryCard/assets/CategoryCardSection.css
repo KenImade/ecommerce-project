@@ -27,7 +27,7 @@
 .category-cards .category-card .card-img {
     width: 120px;
     height: 160px;
-    z-index: 1000;
+    z-index: 2;
 }
 
 .category-cards .category-card .card-img img {
@@ -43,7 +43,7 @@
     width: 350px;
     background-color: var(--grey);
     border-radius: 8px;
-    z-index: 1000;
+    z-index: 2;
 }
 
 .category-cards .category-card::before {

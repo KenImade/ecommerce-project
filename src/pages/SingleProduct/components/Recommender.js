@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Button from '../../../components/Button';
 
-const Recommender = ({products}) => {
+const Recommender = ({product, products}) => {
 
     const [randomProducts, setRandomProducts] = useState([]);
 
@@ -22,8 +22,10 @@ const Recommender = ({products}) => {
     })
 
     useEffect(() => {
-        setRandomProducts([...products].sort(() => Math.random() - 0.5).slice(0, 3))
-    }, [products]);
+        setRandomProducts([...products]
+            .filter(item => item.id !== product.id)
+            .sort(() => Math.random() - 0.5).slice(0, 3))
+    }, [product, products]);
 
     console.log(randomProducts);
     return (

@@ -1,12 +1,8 @@
 import AddToCart from './AddToCart'
 
-const ProductHero = ({product}) => {
+import formatter from "../../../utils/currencyFormatter";
 
-    let formatter = new Intl.NumberFormat('en-US', {
-        style: "currency",
-        currency: "USD",
-        minimumFractionDigits: 0
-    })
+const ProductHero = ({product}) => {
 
     return (
         <section className='product-hero'>

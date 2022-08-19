@@ -1,3 +1,6 @@
+import {useOutletContext} from "react-router-dom";
+import { useEffect } from "react";
+
 import Advert from "../../components/Advert/Advert";
 import CategoryBanner from "../../components/CategoryBanner/CategoryBanner";
 import CategoryCardSection from "../../components/CategoryCard/CategoryCardSection";
@@ -9,6 +12,12 @@ import xx99OneImg  from "./assets/product-xx99-mark-one-headphones/desktop/image
 import xx59Img from "./assets/product-xx59-headphones/desktop/image-category-page-preview.jpg";
 
 const Headphones = () => {
+  const setDisplayCart = useOutletContext()[1]
+
+  useEffect(() => {
+    setDisplayCart(false)
+  }, [setDisplayCart])
+
   return (
     <section className="headphones">
         <CategoryBanner title={"headphones"} />

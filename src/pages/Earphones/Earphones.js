@@ -1,3 +1,6 @@
+import {useOutletContext} from "react-router-dom";
+import { useEffect } from "react";
+
 import Advert from "../../components/Advert/Advert";
 import CategoryBanner from "../../components/CategoryBanner/CategoryBanner";
 import CategoryCardSection from "../../components/CategoryCard/CategoryCardSection";
@@ -7,6 +10,13 @@ import "./assets/Earphones.css";
 import yx1Img from "./assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
 
 const Earphones = () => {
+
+  const setDisplayCart = useOutletContext()[1]
+
+  useEffect(() => {
+    setDisplayCart(false)
+  }, [setDisplayCart])
+  
   return (
     <section>
         <CategoryBanner title={"earphones"} />

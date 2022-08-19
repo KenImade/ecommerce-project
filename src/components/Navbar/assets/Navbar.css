@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     gap: 36px;
+    height: 97px;
     padding-top: 35px;
     padding-bottom: 0px;
     background-color: var(--black);
@@ -45,12 +46,13 @@
     color: var(--orange);
 }
 
-.navbar .container .cart {
+.navbar .container .cart-img {
     height: 15px;
     width: 24px;
+    cursor: pointer;
 }
 
-.navbar .container .cart img {
+.navbar .container .cart-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;

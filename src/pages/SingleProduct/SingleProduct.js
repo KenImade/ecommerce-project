@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from 'react';
 
@@ -23,11 +23,14 @@ const SingleProduct = () => {
     const productsStatus = useSelector(getProductsStatus)
     const error = useSelector(getProductsError)
   
+    const setDisplayCart = useOutletContext()[1]
+
     useEffect(() => {
       if(productsStatus === 'idle') {
         dispatch(fetchProducts())
       }
-    }, [productsStatus, dispatch])
+      setDisplayCart(false)
+    }, [productsStatus, dispatch, setDisplayCart])
 
     if (productsStatus === 'loading') {
       return <Spinner />
@@ -41,7 +44,7 @@ const SingleProduct = () => {
                 <ProductHero product={product} />
                 <ProductDescription product={product} />
                 <Gallery product={product} />
-                <Recommender products={products} />
+                <Recommender product={product} products={products} />
                 <CategoryCardSection />
                 <Advert />
             </section>

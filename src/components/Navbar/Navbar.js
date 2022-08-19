@@ -1,11 +1,13 @@
 import {NavLink} from "react-router-dom";
 import "./assets/Navbar.css";
+
 import logo from "../../assets/shared/desktop/logo.svg";
 import cart from "./assets/icon-cart.svg";
 
-const Navbar = () => {
+const Navbar = ({toggleCart}) => {
   return (
-    <nav className="navbar">
+    <>
+      <nav className="navbar">
         <div className="container">
           <img src={logo} alt="logo" className="logo"/>
           <div className="nav--links">
@@ -34,12 +36,13 @@ const Navbar = () => {
                 Earphones
               </NavLink>
           </div>
-          <div className="cart">
+          <div className="cart-img" onClick={() => toggleCart()}>
               <img src={cart} alt="cart" />
           </div>
         </div>
         <div className="line"></div>
-    </nav>
+      </nav>
+    </>
   )
 }
 
