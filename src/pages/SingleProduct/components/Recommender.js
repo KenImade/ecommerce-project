@@ -25,6 +25,10 @@ const Recommender = ({product, products}) => {
         setRandomProducts([...products]
             .filter(item => item.id !== product.id)
             .sort(() => Math.random() - 0.5).slice(0, 3))
+
+        return () => {
+            setRandomProducts([])
+        }
     }, [product, products]);
 
     console.log(randomProducts);
