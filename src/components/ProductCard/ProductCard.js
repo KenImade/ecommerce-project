@@ -1,18 +1,20 @@
 import Button from "../Button";
 import "./ProductCard.css";
 
-const ProductCard = ({img, productName, productDesc, isReverse, isNew}) => {
+const ProductCard = ({product, isReverse}) => {
   return (
-    <section className="product-card-info" style={{flexDirection: isReverse ? "row-reverse" : "row"}}>
+    <section 
+      className="product-card-info" 
+      style={{flexDirection: isReverse ? "row-reverse" : "row"}}>
         <div className="product-img">
-            <img src={img} alt={productName} />
+            <img src={product.productImage.desktop} alt={product.title} />
         </div>
 
         <div className="product-details">
-          {isNew && <p className="overline">new product</p>}
-          <h2>{productName}</h2>
-          <p className="product-text">{productDesc}</p>
-          <Button className={"btn-one"} name={"see product"} link={"#"} />
+          {product.isNew && <p className="overline">new product</p>}
+          <h2>{product.title.split("-").join(" ")}</h2>
+          <p className="product-text">{product.info}</p>
+          <Button className={"btn-one"} name={"see product"} link={`/${product.title}`} />
         </div>
     </section>
   )

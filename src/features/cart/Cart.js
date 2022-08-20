@@ -31,7 +31,7 @@ const Cart = ({toggleCart}) => {
   }, []);
 
   return (
-    <section className="cart" onClick={() => toggleCart()}>
+    <section className="cart">
       <div className="container">
         <div className="row cart-header">
           <h6>
