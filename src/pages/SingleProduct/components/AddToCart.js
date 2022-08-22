@@ -1,15 +1,17 @@
 import {useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
+import { useOutletContext } from 'react-router-dom';
 
-import { addItem, getCart } from '../../../features/cart/cartSlice';
+import { addItem} from '../../../features/cart/cartSlice';
 
 const AddToCart = ({product}) => {
     const ITEM_QUANTITY = 1;
 
     const [count, setCount] = useState(ITEM_QUANTITY);
 
+    const toggleAlert = useOutletContext()[2] 
+
     const dispatch = useDispatch()
-    const cart = useSelector(getCart)
 
     const increment = () => {
         setCount(count + 1);
@@ -31,10 +33,9 @@ const AddToCart = ({product}) => {
         }
         dispatch(addItem(item))
         setCount(ITEM_QUANTITY)
-        // TODO: Create alert banner
-        
+        toggleAlert()    
     }
-    console.log(cart)
+    
     return (
         <section className='actions'>
             <div className='numbers'>
