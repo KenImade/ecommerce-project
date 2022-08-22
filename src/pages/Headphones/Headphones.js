@@ -31,7 +31,7 @@ const Headphones = () => {
       dispatch(fetchProducts())
     } 
     setDisplayCart(false)
-  }, [])
+  }, [dispatch, productsStatus, setDisplayCart])
 
   if (productsStatus === "loading") {
     return <Spinner />

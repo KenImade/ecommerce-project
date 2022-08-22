@@ -33,7 +33,7 @@ const Earphones = () => {
     }
 
     setDisplayCart(false)
-  }, [])
+  }, [dispatch, productsStatus, setDisplayCart])
   
   if (productsStatus === "loading") {
     return <Spinner />
