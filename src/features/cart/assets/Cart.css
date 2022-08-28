@@ -59,7 +59,10 @@
     width: 313px;
     padding: 15px 60px;
     background-color: var(--orange);
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
+    font-weight: bold;
     color: var(--white);
     cursor: pointer;
 }

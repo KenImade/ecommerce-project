@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import {useEffect} from "react";
+import { Link } from "react-router-dom";
 
 import formatter from "../../utils/currencyFormatter";
 
@@ -56,11 +57,7 @@ const Cart = ({toggleCart}) => {
             <p className="body">Total</p>
             <div>{formatter.format(total)}</div>
           </div>
-          <button 
-            className="cart-checkout-btn"
-          >
-            checkout
-          </button>
+          <Link className="cart-checkout-btn" to={"checkout"}>checkout</Link>
         </div>
       </div>
     </section>

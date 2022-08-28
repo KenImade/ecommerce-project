@@ -29,7 +29,8 @@ const AddToCart = ({product}) => {
             title: product.title,
             tag: product.tag,
             price: product.price,
-            quantity: count
+            quantity: count,
+            image: product.cartImage
         }
         dispatch(addItem(item))
         setCount(ITEM_QUANTITY)

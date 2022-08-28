@@ -82,6 +82,9 @@ h6 {
 }
 
 /* BUTTONS */
+button {
+	cursor: pointer;
+}
 
 .btn, .btn:visited {
 	display: inline-block;
@@ -142,11 +145,31 @@ form {
 	padding: 50px;
 }
 
+form label {
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 16px;
+	margin-bottom: 9px;
+}
+
 .form-group {
 	display: flex;
 	flex-direction: column;
 	justify-content: left;
 	width: 309px;
+	margin-bottom: 24px;
+}
+
+.form-group label {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.form-group label > span {
+	font-size: inherit;
+	text-transform: capitalize;
 }
 
 .form-group input {
@@ -170,12 +193,13 @@ form {
 	display: inline-flex;
 	align-items: center;
 	margin-right: 16px;
-
+	font-weight: bold;
 	height: 56px;
 	width: 309px;
 	padding: 24px;
 	border-radius: 8px;
 	border: 1px solid #CFCFCF;
+	cursor: pointer;
 }
 
 .radio-btn-input {
