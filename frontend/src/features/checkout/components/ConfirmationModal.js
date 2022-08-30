@@ -1,9 +1,13 @@
+import {useState} from "react";
+
 import formatter from "../../../utils/currencyFormatter";
 import formatText from "../../../utils/formatText";
 
 import confirmationImg from "../assets/icon-order-confirmation.svg";
 
-const ConfirmationModal = ({items, saleSummary}) => {
+const ConfirmationModal = ({completeSale, items, saleSummary}) => {
+
+    const [showMore, setShowMore] = useState(false);
 
     const productCards = items.map(item => {
         return (
@@ -34,15 +38,32 @@ const ConfirmationModal = ({items, saleSummary}) => {
                 </h3>
                 <p className="body">You will receive an email confirmation shortly.</p>
                 <div className="products-container">
-                    <div className="left">
-                        {productCards}
-                    </div>
+                    {productCards.length > 1 && !showMore ? (
+                        <div className="left">
+                            {productCards[0]}
+                            <button onClick={() => setShowMore(!showMore)}>
+                                {`and ${productCards.length - 1} other item(s)`}
+                            </button>
+                        </div>) : (
+                            <div className="left">
+                                {productCards}
+                                {productCards.length > 1 && <button onClick={() => setShowMore(!showMore)}>
+                                    View less
+                                </button>}
+                            </div>
+                        )
+                    }
                     <div className="right">
-                        <p className="title">grand total</p>
-                        <p>{formatter.format(saleSummary.grandTotal)}</p>
+                        <div>
+                            <p className="title">grand total</p>
+                            <p className="amount">{formatter.format(saleSummary.grandTotal)}</p>
+                        </div>
                     </div>
                 </div>
-                <button className="btn-one confirmation-btn">
+                <button 
+                    className="btn-one confirmation-btn"
+                    onClick={() => completeSale()}
+                >
                     back to home
                 </button>
             </div>

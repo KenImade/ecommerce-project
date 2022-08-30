@@ -42,7 +42,6 @@ const cartSlice = createSlice({
     extraReducers(builder) {
         builder.addCase(postSale.fulfilled, (state, action) => {
             console.log("Sale completed")
-            state.cart = []
         })
     }
 })

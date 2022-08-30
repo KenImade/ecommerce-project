@@ -22,6 +22,8 @@ const Summary = ({submitForm, items, saleSummary}) => {
   })
   
   const handleFormSubmit = () => {
+    console.log("hello")
+    console.log(submitForm.current)
     submitForm.current.click()
   }
   return (
@@ -42,7 +44,7 @@ const Summary = ({submitForm, items, saleSummary}) => {
         </div>
         <div>
           <span className="fees-text body">vat (included)</span>
-          <span className="fees-amount">{formatter.format(saleSummary.total * saleSummary.vat)}</span>
+          <span className="fees-amount">{formatter.format(saleSummary.vat)}</span>
         </div>
         <div>
           <span className="fees-text body">grand total</span>

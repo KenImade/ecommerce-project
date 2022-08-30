@@ -166,6 +166,7 @@ const CheckoutForm = ({submitForm, onSubmit, register, handleSubmit, errors}) =>
                     </p>
                 </div>}
                 <button ref={submitForm} type="submit" style={{ display: 'none' }} />
+                {/* <button type='submit'>Submit form</button> */}
             </form>
             
         </>

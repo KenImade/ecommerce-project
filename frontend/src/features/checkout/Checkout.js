@@ -1,14 +1,15 @@
-import { useEffect, useRef } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Navigate, useOutletContext } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 
 import CheckoutSchema from '../../schema/CheckoutSchema';
 
-import { getCart, postSale } from "../cart/cartSlice";
+import { getCart, postSale, removeAllItems } from "../cart/cartSlice";
 
 import "./assets/Checkout.css";
+
 import CheckoutForm from "./components/CheckoutForm";
 import Summary from "./components/Summary";
 import ConfirmationModal from "./components/ConfirmationModal";
@@ -21,9 +22,22 @@ const Checkout = () => {
 
     const submitForm = useRef();
 
+    const [showModal, setShowModal] = useState(false);
+
     const {register, handleSubmit, formState: {errors}, reset } = useForm({
         resolver: yupResolver(CheckoutSchema)
     })
+
+    const onSubmit = (data) => {
+        const sale = {
+            user: {...data},
+            items: getSaleItems(), 
+            total: saleSummary.grandTotal
+        }
+        console.log(sale)
+        dispatch(postSale(sale))
+        setShowModal(!showModal)
+    }
 
     const getSaleItems = () => {
         const items = []
@@ -40,16 +54,9 @@ const Checkout = () => {
         return items;
     }
 
-    const onSubmit = (data) => {
-        const sale = {
-            user: {...data},
-            items: getSaleItems(), 
-            total: saleSummary.grandTotal
-        }
-        dispatch(postSale(sale))
+    const completeSale = () => {
         reset()
-        // TODO: Create confirmation modal
-        console.log(sale)
+        dispatch(removeAllItems())
     }
 
     const cartItems = useSelector(getCart)
@@ -62,20 +69,22 @@ const Checkout = () => {
 
     const saleSummary = {
         total: total,
-        grandTotal: total + (total * VAT) + SHIPPING_VALUE,
-        vat: VAT,
+        grandTotal: total + SHIPPING_VALUE,
+        vat: total * VAT,
         shipping: SHIPPING_VALUE
     }
-
-    
 
     useEffect(() => {
       setDisplayCart(false)
     }, [setDisplayCart])
+
+    if(cartItems.length === 0) {
+        return <Navigate to="/"/>
+    }
     
     return (
         <>
-            <ConfirmationModal items={cartItems} saleSummary={saleSummary}/>
+            {showModal && <ConfirmationModal completeSale={completeSale} items={cartItems} saleSummary={saleSummary}/>}
             <section className="checkout">
                 <div className="left">
                     <CheckoutForm 
@@ -87,7 +96,7 @@ const Checkout = () => {
                     />
                 </div>
                 <div className="right">
-                    <Summary submitForm={submitForm} items={cartItems} saleSummary={saleSummary} />
+                    <Summary submitForm={submitForm}  items={cartItems} saleSummary={saleSummary} />
                 </div>
             </section>
         </>
