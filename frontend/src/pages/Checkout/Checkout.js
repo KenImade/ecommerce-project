@@ -6,7 +6,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 
 import CheckoutSchema from '../../schema/CheckoutSchema';
 
-import { getCart, postSale, removeAllItems } from "../cart/cartSlice";
+import { getCart, postSale, removeAllItems } from "../../features/cart/cartSlice";
 
 import "./assets/Checkout.css";
 

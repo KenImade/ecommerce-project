@@ -9,7 +9,7 @@ import SharedLayout from './pages/SharedLayout';
 import SingleProduct from './pages/SingleProduct/SingleProduct';
 import Speakers from './pages/Speakers/Speakers';
 
-import Checkout from './features/checkout/Checkout';
+import Checkout from './pages/Checkout/Checkout';
 import ProtectedRoute from './pages/ProtectedRoute';
 
 function App() {
