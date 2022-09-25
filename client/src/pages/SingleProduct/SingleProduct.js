@@ -13,6 +13,7 @@ import Spinner from "../../components/Spinner/Spinner";
 import { getProductsError, getProductsStatus, selectAllProducts, fetchProducts } from '../../features/products/productsSlice';
 
 import "./assets/SingleProduct.css";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const SingleProduct = () => {
     const title = useParams();
@@ -35,8 +36,7 @@ const SingleProduct = () => {
     if (productsStatus === 'loading') {
       return <Spinner />
     } else if (productsStatus === 'failed') {
-        // TODO: Create custom error page
-        return <p>{error}</p>
+        return <ErrorPage error={error} />
     } else if (productsStatus === 'succeeded') {
         const product = products.find(product => product.title === title.productTitle)
         return (

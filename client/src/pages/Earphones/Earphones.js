@@ -16,6 +16,7 @@ import {
   getProductsStatus,
   selectAllProducts
 } from "../../features/products/productsSlice";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const Earphones = () => {
   const CATEGORY_NAME = "earphones";
@@ -38,7 +39,7 @@ const Earphones = () => {
   if (productsStatus === "loading") {
     return <Spinner />
   } else if (productsStatus === "failed") {
-    return <p>{error}</p>
+    return <ErrorPage error={error} />
   } else if (productsStatus === "succeeded") {
     return (
       <section className="earphones">

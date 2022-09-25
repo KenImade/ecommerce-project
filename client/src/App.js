@@ -8,7 +8,6 @@ import Home from './pages/Home/Home';
 import SharedLayout from './pages/SharedLayout';
 import SingleProduct from './pages/SingleProduct/SingleProduct';
 import Speakers from './pages/Speakers/Speakers';
-
 import Checkout from './pages/Checkout/Checkout';
 import ProtectedRoute from './pages/ProtectedRoute';
 
