@@ -13,10 +13,10 @@ const ProductSchema = new mongoose.Schema({
     isNew: {
         type: Boolean,
     },
-    previewImg: {
+    preview: {
         type: String,
     },
-    productImg: {
+    productImage: {
         type: String,
     },
     info: {
@@ -42,7 +42,7 @@ const ProductSchema = new mongoose.Schema({
         }
     ],
     gallery: [String],
-    cartImg: {
+    cartImage: {
         type: String,
     }
 });

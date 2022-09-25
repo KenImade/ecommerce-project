@@ -31,15 +31,15 @@ const ProductType = new GraphQLObjectType({
         tag: {type: GraphQLString},
         category: {type: GraphQLString},
         isNew: {type: GraphQLBoolean},
-        previewImg: {type: GraphQLString},
-        productImg: {type: GraphQLString},
+        preview: {type: GraphQLString},
+        productImage: {type: GraphQLString},
         info: {type: GraphQLString},
         price: {type: GraphQLFloat},
         quantity: {type: GraphQLFloat},
         features: {type: GraphQLString},
         accessories: {type: new GraphQLList(accessoriesType)},
         gallery: {type: new GraphQLList(GraphQLString)},
-        cartImg: {type: GraphQLString}
+        cartImage: {type: GraphQLString}
     })
 })
 
