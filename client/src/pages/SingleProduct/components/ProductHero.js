@@ -1,3 +1,4 @@
+import React from 'react';
 import AddToCart from './AddToCart'
 
 import formatter from "../../../utils/currencyFormatter";

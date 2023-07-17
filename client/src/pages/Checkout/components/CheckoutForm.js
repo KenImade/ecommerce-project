@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 
 import cashOnDeliveryImg from "../assets/icon-cash-on-delivery.svg";

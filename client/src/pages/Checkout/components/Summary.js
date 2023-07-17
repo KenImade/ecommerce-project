@@ -1,3 +1,4 @@
+import React from "react";
 import formatter from "../../../utils/currencyFormatter";
 
 const Summary = ({submitForm, items, saleSummary}) => {

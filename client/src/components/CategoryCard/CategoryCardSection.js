@@ -1,3 +1,4 @@
+import React from 'react';
 import headphoneThumbnail from "./assets/image-category-thumbnail-headphones.png";
 import earphoneThumbnail from "./assets/image-category-thumbnail-earphones.png";
 import speakerThumbnail from "./assets/image-category-thumbnail-speakers.png";

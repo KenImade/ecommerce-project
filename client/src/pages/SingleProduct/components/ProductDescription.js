@@ -1,3 +1,4 @@
+import React from "react";
 
 const ProductDescription = ({product}) => {
     let content = product.features.split("\n/")

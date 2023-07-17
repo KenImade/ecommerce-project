@@ -1,3 +1,4 @@
+import React from "react";
 import "./assets/Advert.css";
 import img from "../../assets/shared/desktop/image-best-gear.jpg";
 

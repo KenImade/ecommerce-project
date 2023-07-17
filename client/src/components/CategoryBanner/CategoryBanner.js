@@ -1,3 +1,4 @@
+import React from "react";
 import "./CategoryBanner.css";
 
 const CategoryBanner = ({title}) => {

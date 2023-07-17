@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch } from 'react-redux'
 import formatter from '../../../utils/currencyFormatter'
 import { decreaseQuantity, increaseQuantity } from '../cartSlice'

@@ -1,3 +1,4 @@
+import React from 'react';
 import "./assets/Home.css";
 
 import {useOutletContext} from "react-router-dom";

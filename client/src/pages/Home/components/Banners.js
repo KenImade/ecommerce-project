@@ -1,3 +1,4 @@
+import React from "react";
 import speakerOne from "../assets/desktop/image-speaker-zx9.png";
 import speakerTwo from "../assets/desktop/image-speaker-zx7.jpg";
 import earphones from "../assets/desktop/image-earphones-yx1.jpg";
