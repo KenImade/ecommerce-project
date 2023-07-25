@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-const PRODUCTS_URL = 'http://localhost:3500/products';
+const PRODUCTS_URL = 'http://localhost:5000/graphql';
 
 const initialState = {
     products: [],
@@ -11,8 +11,49 @@ const initialState = {
 }
 
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
-    const response = await axios.get(PRODUCTS_URL)
-    return response.data
+    try {
+        const response = await axios.post(PRODUCTS_URL, {
+            query: `
+            query {
+                getAllProducts {
+                  id
+                  title
+                  tag
+                  category
+                  isNew
+                  preview {
+                    desktop
+                    tablet
+                    mobile
+                  }
+                  productImage {
+                    desktop
+                    tablet
+                    mobile
+                  }
+                  info
+                  price
+                  quantity
+                  features
+                  accessories {
+                    name
+                    quantity
+                  }
+                  gallery {
+                    desktop
+                    tablet
+                    mobile
+                  }
+                  cartImage
+                }
+              }
+            `
+        });
+        // console.log(response.data.data.getAllProducts)
+        return response.data.data.getAllProducts
+    } catch (error) {
+        console.error('Error fetching products:', error)
+    }   
 });
 
 
