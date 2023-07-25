@@ -1,22 +1,36 @@
-const express = require('express');
-const colors = require('colors');
-const cors = require('cors');
-require('dotenv').config();
-const {graphqlHTTP} = require('express-graphql');
-const schema = require("./schema/schema")
-const connectDB = require("./config/db");
+// index.js (or app.js)
 
-const port = process.env.PORT || 5000;
+const express = require('express');
+
+require('dotenv').config();
+const colors = require('colors');
+
+
+const { ApolloServer } = require('apollo-server-express');
+const { connectDB, Product } = require('./config/db');
+const productSchema = require('./schema/productSchema');
+const productResolvers = require('./resolvers/productResolvers')
 
 const app = express();
+const PORT = process.env.PORT || 4000;
 
-connectDB()
+// Connect to MongoDB database
+connectDB();
 
-app.use(cors());
+const server = new ApolloServer({
+  typeDefs: productSchema,
+  resolvers: productResolvers,
+});
 
-app.use('/graphql', graphqlHTTP({
-    schema,
-    graphiql: process.env.NODE_ENV === 'development'
-}))
-
-app.listen(port, console.log(`Server running on port ${port}`))
+// Start the Apollo Server first
+async function startApolloServer() {
+    await server.start();
+    server.applyMiddleware({ app });
+}
+  
+startApolloServer().then(() => {
+    // Start the Express server
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}/graphql`);
+    });
+});
