@@ -7,9 +7,11 @@ const colors = require('colors');
 
 
 const { ApolloServer } = require('apollo-server-express');
-const { connectDB, Product } = require('./config/db');
+const { connectDB } = require('./config/db');
 const productSchema = require('./schema/productSchema');
+const orderSchema = require("./schema/orderSchema")
 const productResolvers = require('./resolvers/productResolvers')
+const orderResolvers = require('./resolvers/orderResolvers')
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -18,8 +20,8 @@ const PORT = process.env.PORT || 4000;
 connectDB();
 
 const server = new ApolloServer({
-  typeDefs: productSchema,
-  resolvers: productResolvers,
+  typeDefs: [productSchema, orderSchema],
+  resolvers: [productResolvers, orderResolvers],
 });
 
 // Start the Apollo Server first
