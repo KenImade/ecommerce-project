@@ -1,9 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
-const PRODUCTS_URL = 'http://localhost:5000/graphql';
-
 const initialState = {
     products: [],
     status: "idle",
@@ -12,7 +9,7 @@ const initialState = {
 
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
     try {
-        const response = await axios.post(PRODUCTS_URL, {
+        const response = await axios.post(process.env.REACT_APP_BACKEND_ENDPOINT, {
             query: `
             query {
                 getAllProducts {

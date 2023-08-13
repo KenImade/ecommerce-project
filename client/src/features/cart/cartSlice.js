@@ -1,16 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-const SALES_URL = 'http://localhost:5000/sales';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     cart: [],
 }
-
-export const postSale = createAsyncThunk("sales/post", async (sale) => {
-    const response = await axios.post(SALES_URL, sale)
-    return response.data;
-})
 
 const cartSlice = createSlice({
     name: "cart",
@@ -38,11 +30,6 @@ const cartSlice = createSlice({
         removeAllItems: (state, action) => {
             state.cart = []
         },
-    },
-    extraReducers(builder) {
-        builder.addCase(postSale.fulfilled, (state, action) => {
-            console.log("Sale completed")
-        })
     }
 })
 

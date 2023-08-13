@@ -7,7 +7,8 @@ import {yupResolver} from "@hookform/resolvers/yup";
 
 import CheckoutSchema from '../../schema/CheckoutSchema';
 
-import { getCart, postSale, removeAllItems } from "../../features/cart/cartSlice";
+import { getCart, removeAllItems } from "../../features/cart/cartSlice";
+import { postOrder } from "../../features/orders/orderSlice";
 
 import "./assets/Checkout.css";
 
@@ -36,16 +37,15 @@ const Checkout = () => {
             total: saleSummary.grandTotal
         }
         console.log(sale)
-        dispatch(postSale(sale))
+        dispatch(postOrder(sale))
         setShowModal(!showModal)
     }
 
     const getSaleItems = () => {
         const items = []
         cartItems.forEach((item) => {
-            const {id, title, price, quantity} = item
+            const {title, price, quantity} = item
             const saleItem = {
-                id,
                 title,
                 price,
                 quantity
