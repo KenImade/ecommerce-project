@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/KenImade/ecommerce-project.git"
   },
-  "keywords": [],
+  "keywords": ["ecommerce"],
   "author": "Kenneth Imade",
   "license": "ISC",
   "bugs": {
@@ -29,7 +29,8 @@
     "express": "^4.18.1",
     "express-graphql": "^0.12.0",
     "graphql": "^15.8.0",
-    "mongoose": "^6.6.1"
+    "mongoose": "^6.6.1",
+    "dotenv": "^16.0.2"
   },
   "devDependencies": {
     "dotenv": "^16.0.2",
