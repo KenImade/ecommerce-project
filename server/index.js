@@ -30,9 +30,30 @@ async function startApolloServer() {
     server.applyMiddleware({ app });
 }
   
-startApolloServer().then(() => {
-    // Start the Express server
-    app.listen(PORT, () => {
-        console.log(`Server running on http://localhost:${PORT}/graphql`);
-    });
+
+startApolloServer()
+    .then(() => {
+        // Add a route to serve an HTML page
+        app.get('/', (req, res) => {
+            res.send(`
+                <html>
+                    <head>
+                        <title>Backend for Dummy Ecommerce application</title>
+                    </head>
+                    <body>
+                        <h1>Welcome to the backend for a dummy ecommerce application.</h1>
+                        <p>This was created by Kenenth Imade</p>
+                    </body>
+                </html>
+            `);
+        });
+
+        // Start the Express server
+        app.listen(PORT, () => {
+            console.log(`Server running on http://localhost:${PORT}/`);
+            console.log(`GraphQL Endpoint: http://localhost:${PORT}/graphql`);
+        });
+    })
+    .catch(error => {
+        console.error('Error starting Apollo Server:', error);
 });
