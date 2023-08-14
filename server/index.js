@@ -1,4 +1,4 @@
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 const express = require('express');
 const colors = require('colors');
 const { ApolloServer } = require('apollo-server-express');
@@ -47,8 +47,8 @@ startApolloServer()
 
         // Start the Express server
         app.listen(PORT, () => {
-            console.log(`Server running on http://localhost:${PORT}/`);
-            console.log(`GraphQL Endpoint: http://localhost:${PORT}/graphql`);
+            console.log(`Server running on ${PORT}/`);
+            console.log(`GraphQL Endpoint: ${PORT}/graphql`);
         });
     })
     .catch(error => {

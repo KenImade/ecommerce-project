@@ -1,2 +1,2 @@
 runtime: nodejs16
-application_readable: true
+entrypoint: npm start
