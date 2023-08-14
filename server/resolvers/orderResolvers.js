@@ -1,4 +1,5 @@
-const Order = require("../models/orderModel");
+const path = require('path')
+const Order = require(path.join(__dirname, '..', 'models', 'orderModel'));
 
 const orderResolvers = {
     Mutation: {

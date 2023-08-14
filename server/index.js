@@ -1,17 +1,14 @@
-// index.js (or app.js)
-
-const express = require('express');
-
 require('dotenv').config();
+const express = require('express');
 const colors = require('colors');
-
-
 const { ApolloServer } = require('apollo-server-express');
-const { connectDB } = require('./config/db');
-const productSchema = require('./schema/productSchema');
-const orderSchema = require("./schema/orderSchema")
-const productResolvers = require('./resolvers/productResolvers')
-const orderResolvers = require('./resolvers/orderResolvers')
+const path = require('path')
+
+const { connectDB } = require(path.join(__dirname, 'config', 'db'));
+const productSchema = require(path.join(__dirname, 'schema', 'productSchema'));
+const orderSchema = require(path.join(__dirname, 'schema', 'orderSchema'))
+const productResolvers = require(path.join(__dirname, 'resolvers', 'productResolvers'))
+const orderResolvers = require(path.join(__dirname, 'resolvers', 'orderResolvers'))
 
 const app = express();
 const PORT = process.env.PORT || 4000;

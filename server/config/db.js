@@ -1,7 +1,8 @@
 // db.js
 
 const mongoose = require('mongoose');
-const Product = require('../models/productModel')
+const path = require('path');
+const Product = require(path.join(__dirname, '..', 'models', 'productModel'));
 
 const connectDB = async () => {
     try {

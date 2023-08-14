@@ -1,6 +1,6 @@
 // resolvers.js
-
-const Product = require('../models/productModel');
+const path = require('path')
+const Product = require(path.join(__dirname, '..', 'models', 'productModel'))
 
 const productResolvers = {
   Query: {
